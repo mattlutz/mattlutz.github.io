@@ -1,45 +1,281 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
+    
 <head>
-    <!-- META TAGS -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- TITLE TAG -->
-    <title>Matt Lutz | Front End Web Developer</title>
+    <title>The POST SOD Generator</title>
+    
+    
+    <!-- CSS stylesheets/Bootstrap/Font -->
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    
+    
+    <!-- Javascript/jQuery/Bootstrap -->
+    
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </head>
-
-<body>
     
-    <!-- HEADER START -->
-    <header>
-        <!-- Clickable title that brings you to the inex page -->
-        <a href="index.html">
-            <h1>Matt</h1>
-            <h2>Front End Web Developer</h2>
-        </a>
-        <!-- Navigation menu with three links: portfolio, about, contact  -->
-        <nav>
-            <ul>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <body>
+    
+    <!-- Wrapper div for body-->
+    
+    <div class="wrap">
+        
+    <!-- HEADER BEGIN -->
+        
+    <header class="container-fluid">
+        <nav><a href="#">H O M E</a></nav>
     </header>
-    <!-- HEADER END -->
     
-    <!-- FOOTER BEGIN -->
+      <!-- HEADER END -->
+  
+        
+        
+    <div>
+        
+        
+        <!-- Main content inside whitebox -->
+        
+        <div class="container-fluid" id="whitebox">
+
+            <img class="img-fluid" id="mainLogo" src="img/logo.png">
+            
+            <h1>Slice of the Day Generator</h1>
+            
+            <p>Select three toppings manually, or click Randomize All, then hit Set</p>
+            
+            
+            <!-- Non-functional slider to select Veggies Only for Randomizer (future feature) -->
+            
+            <div id="veggieSel">
+                <p>Veggie only?</p><label class="switch">
+
+                <input type="checkbox" id="veggieSelect">
+                <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="container-fluid">
+                
+                
+                <!--Non-functional Randomize button (future feature) -->
+                
+                <button type="button" class="btn btn-secondary btn-lg" id="randomize">Randomize All</button>
+                
+                <div id="allToppings">
+
+                    <div>
+                        
+                        
+                        <!-- Topping Selectors -->
+                        
+                        <div class="input-group">
+
+                            <select class="custom-select" id="topping1">
+                                <option selected>Topping #1...</option>
+                                <option value="1">Pepperoni</option>
+                                <option value="2">Sausage</option>
+                                <option value="3">Meatball</option>
+                                <option value="4">Ham</option>
+                                <option value="5">Bacon</option>
+                                <option value="6">Chicken</option>
+                                <option value="7">Steak</option>
+                                <option value="8">Salami</option>
+                                <option value="9">Green Pepper</option>
+                                <option value="10">Mushroom</option>
+                                <option value="11">Jalapeno</option>
+                                <option value="12">Tomato</option>
+                                <option value="13">Banana Pepper</option>
+                                <option value="14">Artichoke</option>
+                                <option value="15">Garlic</option>
+                                <option value="16">Kalamata Olive</option>
+                                <option value="17">Spinach</option>
+                                <option value="18">Fresh Basil</option>
+                                <option value="19">Pineapple</option>
+                                <option value="20">Roasted Red Pepper</option>
+                                <option value="21">Sun-Dried Tomato</option>
+                                <option value="22">Broccoli</option>
+                                <option value="23">Giardiniera</option>
+                                <option value="24">Pickles</option>
+                                <option value="25">Cheddar</option>
+                                <option value="26">Ricotta</option>
+                                <option value="27">Feta</option>
+                                <option value="28">Provolone</option>
+                                <option value="29">Fresh Mozzerella</option>
+                            </select>
+                            
+
+                            
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary col" type="button" id="topping1Select" onclick="GetTopping1()">Select</button>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="input-group">
+
+                        <select class="custom-select selector2" id="topping2">
+                            <option selected>Topping #2...</option>
+                            <option value="1">Pepperoni</option>
+                            <option value="2">Sausage</option>
+                            <option value="3">Meatball</option>
+                            <option value="4">Ham</option>
+                            <option value="5">Bacon</option>
+                            <option value="6">Chicken</option>
+                            <option value="7">Steak</option>
+                            <option value="8">Salami</option>
+                            <option value="9">Green Pepper</option>
+                            <option value="10">Mushroom</option>
+                            <option value="11">Jalapeno</option>
+                            <option value="12">Tomato</option>
+                            <option value="13">Banana Pepper</option>
+                            <option value="14">Artichoke</option>
+                            <option value="15">Garlic</option>
+                            <option value="16">Kalamata Olive</option>
+                            <option value="17">Spinach</option>
+                            <option value="18">Fresh Basil</option>
+                            <option value="19">Pineapple</option>
+                            <option value="20">Roasted Red Pepper</option>
+                            <option value="21">Sun-Dried Tomato</option>
+                            <option value="22">Broccoli</option>
+                            <option value="23">Giardiniera</option>
+                            <option value="24">Pickles</option>
+                            <option value="25">Cheddar</option>
+                            <option value="26">Ricotta</option>
+                            <option value="27">Feta</option>
+                            <option value="28">Provolone</option>
+                            <option value="29">Fresh Mozzerella</option>
+                        </select>
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="GetTopping2()">Select</button>
+                        </div>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <select class="custom-select selector3" id="topping3">
+                            <option selected>Topping #3...</option>
+                            <option value="1">Pepperoni</option>
+                            <option value="2">Sausage</option>
+                            <option value="3">Meatball</option>
+                            <option value="4">Ham</option>
+                            <option value="5">Bacon</option>
+                            <option value="6">Chicken</option>
+                            <option value="7">Steak</option>
+                            <option value="8">Salami</option>
+                            <option value="9">Green Pepper</option>
+                            <option value="10">Mushroom</option>
+                            <option value="11">Jalapeno</option>
+                            <option value="12">Tomato</option>
+                            <option value="13">Banana Pepper</option>
+                            <option value="14">Artichoke</option>
+                            <option value="15">Garlic</option>
+                            <option value="16">Kalamata Olive</option>
+                            <option value="17">Spinach</option>
+                            <option value="18">Fresh Basil</option>
+                            <option value="19">Pineapple</option>
+                            <option value="20">Roasted Red Pepper</option>
+                            <option value="21">Sun-Dried Tomato</option>
+                            <option value="22">Broccoli</option>
+                            <option value="23">Giardiniera</option>
+                            <option value="24">Pickles</option>
+                            <option value="25">Cheddar</option>
+                            <option value="26">Ricotta</option>
+                            <option value="27">Feta</option>
+                            <option value="28">Provolone</option>
+                            <option value="29">Fresh Mozzerella</option>
+                        </select>
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="GetTopping3()">Select</button>
+                        </div>
+
+                    </div>
+                    
+                    <!-- Sauce Selector -->
+                    <div class="input-group">
+
+                        <select class="custom-select" id="sauce">
+                            <option selected>Sauce &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                            <option value="1">Marinara (default)</option>
+                            <option value="2">GOO</option>
+                            <option value="3">Pesto</option>
+                            <option value="4">BBQ</option>
+                            <option value="5">Buffalo</option>
+                        </select>
+
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="GetSauce()">Select</button>
+                        </div>
+                        
+                        <div class="container-fluid" id="results">
+                            <p>Today's Selection:</p><p id="result1"></p> + <p id="result2"></p> + <p id="result3"></p> &nbsp;on&nbsp; <p id="result4"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <!-- Button to set selections and log to table (future feature) -->
+                
+
+                 <button type="button" class="btn btn-secondary btn-lg">Set</button>
+            </div>
+
+            <div>
+
+                
+                <!-- Table of previous SODs (future feature), hidden by default -->
+                
+            <button type="button" class="btn" onclick="showPrev()">Show Previous SODs</button>
+
+                <table id="prevSOD" class="table">
+                    <thead>
+                    <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Topping 1</th>
+                    <th scope="col">Topping 2</th>
+                    <th scope="col">Topping 3</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td><p id="result1"></p></td>
+                    <td></td>
+                    <td></td>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+    </div>
+        </div>
+    
+    <!-- FOOTER START -->
+    
     <footer>
-        <!-- clickable links to twitter that opens in a new tab -->
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <!-- clickable links to facebook that opens in a new tab -->
-        <a href="https://facebook.com" target="_blank">Facebook </a>
-        <!-- copyright -->
-        <p>&copy; 2021 Matt Lutz</p>
+        &copy; 2021 by Matt Lutz
     </footer>
-    <!-- FOOTER END -->
+    
+    <!-- FOOTER END-->
     
 </body>
-
-</html> 
+</html>
